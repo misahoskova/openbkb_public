@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="//code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <title>OpenBkB - Criteria Definition Form</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.png">
+</head>
+<body>
+  <nav class="navbar has-shadow">
+    <div class="navbar-brand">
+      <a href="index.html" class="navbar-item">
+        <img src="img/plechova-ucetni-rozsirene.png" alt="logo" style="max-height: 100px;" class="py2 px2">
+      </a>
+      <a class="navbar-burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </div>
+
+    <div class="navbar-menu" id="nav-links">
+      <div class="navbar-end">
+        <a href="index.html" class="navbar-item">Home</a>
+        <a href="pairing.html" class="navbar-item">Párování</a>
+        <a href="accounting.html" class="navbar-item">Účtování</a>
+      </div>
+    </div>
+  </nav>
+  <section class="section pb-6 mb-6">
+    <div class="has-text-centered">
+      <h1 class="title is-1">Definice podmínek</h1>
+    </div>
+    <div class="container">
+      <form>
+        <div class="field">
+          <label class="label">Číslo účtu</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Zadejte číslo účtu, na který chcete, aby se pohyb účtoval">
+          </div>
+        </div>
+  
+        <div class="field-body pt-3">
+          <div class="field">
+            <label class="label">Částka</label>
+            <div class="control">
+              <input class="input" type="number" placeholder="Zadejte konkrétní částku, která se má vyhledat">
+            </div>
+          </div>
+    
+          <div class="field">
+            <label class="label">Měna</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Zadejte kód měny">
+            </div>
+          </div>
+        </div>
+  
+        <div class="field pt-3">
+          <label class="label">Variabilní symbol</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Zadejte hodnotu variabilního symbolu, který se má vyhledat">
+          </div>
+        </div>
+  
+        <div class="field">
+          <label class="label">IBAN</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Zadejte celou hodnotu IBAN">
+          </div>
+          <p class="help">Vyplňte jen v okamžiku, kdy neznáte číslo bankovního účtu, ale znáte IBAN</p>
+        </div>
+  
+        <div class="field-body pt-3">
+          <div class="field">
+            <label class="label">Číslo protiúčtu</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Zadejte číslo účtu před lomítkem">
+            </div>
+          </div>
+    
+          <div class="field">
+            <label class="label">Kód banky protiúčtu</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Zadejte číslo banky">
+            </div>
+          </div>
+        </div>
+  
+        <div class="field pt-3">
+          <label class="label">Datum</label>
+          <div class="control">
+            <input class="input" type="date">
+          </div>
+        </div>
+  
+        <div class="field">
+          <label class="label">Společnost</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Napište název společnosti, proti níž je pohyb účtován">
+          </div>
+        </div>
+  
+        <div class="field">
+          <label class="label">Popisek</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Napište přesnou hodnotu popisu pohybu">
+          </div>
+        </div>
+  
+        <div class="field is-grouped pt-4 is-justify-content-center">
+          <div class="control">
+            <a href="criteria_form.html">
+              <button class="button is-link">Uložit bota</button>
+            </a>
+          </div>
+          <div class="control">
+            <button class="button is-link is-light">Zpět</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <footer class="has-text-centered is-flex-align-items-flex-end">
+    <div class="content is-align-content-baseline">
+      <p class="is-size-7 has-text-grey-lighter">Copyright &copy; 2024 Michaela Hošková. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

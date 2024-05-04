@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="//code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <title>OpenBkB - Bot Definition Form</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.png">
+</head>
+<body>
+  <nav class="navbar has-shadow">
+    <div class="navbar-brand">
+      <a href="index.html" class="navbar-item">
+        <img src="img/plechova-ucetni-rozsirene.png" alt="logo" style="max-height: 100px;" class="py2 px2">
+      </a>
+      <a class="navbar-burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </div>
+
+    <div class="navbar-menu" id="nav-links">
+      <div class="navbar-end">
+        <a href="index.html" class="navbar-item">Home</a>
+        <a href="pairing.html" class="navbar-item">Párování</a>
+        <a href="accounting.html" class="navbar-item">Účtování</a>
+      </div>
+    </div>
+  </nav>
+  <section class="section pb-6 mb-6">
+    <div class="has-text-centered">
+      <h1 class="title is-1">Definice bota</h1>
+    </div>
+    <div class="container">
+      <form>
+        <div class="field">
+          <label class="label">Název bota</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Napište libovolný název bota">
+          </div>
+        </div>
+  
+        <div class="field-body">
+          <div class="field">
+            <label class="label">Typ bota</label>
+            <div class="control">
+              <div class="select">
+                <select>
+                  <option>Vyberte typ bota</option>
+                  <option value="pairing">Párovací</option>
+                  <option value="accounting">Účtovací</option>
+                </select>
+              </div>
+            </div>
+          </div>
+  
+          <div class="field">
+            <label class="label">Typ pohybu</label>
+            <div class="control">
+              <div class="select">
+                <select>
+                  <option>Vyberte typ pohybu</option>
+                  <option value="income">Příjem</option>
+                  <option value="outlay">Výdaj</option>
+                  <option value="off">Vše</option>
+                </select>
+              </div>
+            </div>
+          </div>
+    
+          <div class="field">
+            <label class="label">Typ dokumentu</label>
+            <div class="control">
+              <div class="select">
+                <select>
+                  <option>Vyberte typ dokumentu</option>
+                  <option value="issued_invoice">Faktura vydaná</option>
+                  <option value="received_invoice">Faktura přijatá</option>
+                  <option value="commitment">Závazek</option>
+                  <option value="claim">Pohledávka</option>
+                  <option value="off">Vše</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="field-body pt-3">
+          <div class="field">
+            <label class="label">Název společnosti</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Napište název společnosti, pro kterou má bot platit">
+            </div>
+          </div>
+    
+          <div class="field">
+            <label class="label">Bankovní účet</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Napište číslo bankovního účtu, pro který má bot platit">
+            </div>
+          </div>
+        </div>
+  
+        <div class="field-body pt-3">
+          <div class="field">
+            <label class="label">Začátek platnosti</label>
+            <div class="control">
+              <input class="input" type="date" placeholder="Zvolte začátek platnosti">
+            </div>
+          </div>
+    
+          <div class="field">
+            <label class="label">Konec platnosti</label>
+            <div class="control">
+              <input class="input" type="date" placeholder="Zvolte konec platnosti">
+            </div>
+            <p class="help">Pokud pole nevyplníte, bot bude aktivní po celou dobu</p>
+          </div>
+        </div>
+  
+        <div class="field">
+          <label class="label">Párování podle variabilního symbolu</label>
+          <div class="control">
+            <label class="radio">
+              <input type="radio" name="pair_by_var_sym">
+              Yes
+            </label>
+            <label class="radio">
+              <input type="radio" name="pair_by_var_sym">
+              No
+            </label>
+          </div>
+        </div>
+  
+        <div class="field-body pt-3">
+          <div class="field">
+            <label class="label">Párování podle částky</label>
+            <div class="control">
+              <label class="radio">
+                <input type="radio" name="pair_by_amount">
+                Yes
+              </label>
+              <label class="radio">
+                <input type="radio" name="pair_by_amount">
+                No
+              </label>
+            </div>
+          </div>
+    
+          <div class="field">
+            <label class="label">Nastavení zaokrouhlení</label>
+            <div class="control">
+              <div class="select">
+                <select>
+                  <option>Vyberte možnost zaokrouhlení</option>
+                  <option value="off">Vypnuto</option>
+                  <option value="up">Nahoru</option>
+                  <option value="down">Dolu</option>
+                  <option value="mathematical">Matematicky</option>
+                </select>
+              </div>
+            </div>
+          </div>
+    
+          <div class="field">
+            <label class="label">Zaokrouhlení</label>
+            <div class="control">
+              <input class="input" type="number" placeholder="Zaokrouhlení">
+            </div>
+          </div>
+        </div>
+  
+        <div class="field">
+          <label class="label">Měna</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Napište zkratku vybrané měny">
+          </div>
+        </div>
+  
+        <div class="field-body pt-3">
+          <div class="field">
+            <label class="label">Párování podle společnosti</label>
+            <div class="control">
+              <label class="radio">
+                <input type="radio" name="pair_by_company">
+                Yes
+              </label>
+              <label class="radio">
+                <input type="radio" name="pair_by_company">
+                No
+              </label>
+            </div>
+          </div>
+    
+          <div class="field">
+            <label class="label">Jméno společnosti</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="Zadejte jméno společnosti, podle níž se má bot orientovat">
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Párování podle data vystavení</label>
+          <div class="control">
+            <label class="radio">
+              <input type="radio" name="pair_by_date">
+              Yes
+            </label>
+            <label class="radio">
+              <input type="radio" name="pair_by_date">
+              No
+            </label>
+          </div>
+        </div>
+  
+        <div class="field-body pt-3">
+          <div class="field">
+            <label class="label">Párování podle data splatnosti</label>
+            <div class="control">
+              <label class="radio">
+                <input type="radio" name="pair_by_due_date">
+                Yes
+              </label>
+              <label class="radio">
+                <input type="radio" name="pair_by_due_date">
+                No
+              </label>
+            </div>
+          </div>
+    
+          <div class="field">
+            <label class="label">Počet dní před datem splatnosti</label>
+            <div class="control">
+              <input class="input" type="number" placeholder="Underhead">
+            </div>
+          </div>
+    
+          <div class="field">
+            <label class="label">Počet dní po datu splatnosti</label>
+            <div class="control">
+              <input class="input" type="number" placeholder="Overhead">
+            </div>
+          </div>
+        </div>
+  
+        <div class="field">
+          <label class="label">Párování podle protiúčtu</label>
+          <div class="control">
+            <label class="radio">
+              <input type="radio" name="pair_by_bank_account">
+              Yes
+            </label>
+            <label class="radio">
+              <input type="radio" name="pair_by_bank_account">
+              No
+            </label>
+          </div>
+        </div>
+  
+        <div class="field">
+          <label class="label">Párování podle popisku</label>
+          <div class="control">
+            <label class="radio">
+              <input type="radio" name="pair_by_description">
+              Yes
+            </label>
+            <label class="radio">
+              <input type="radio" name="pair_by_description">
+              No
+            </label>
+          </div>
+        </div>
+  
+        <div class="field is-grouped pt-4 is-justify-content-center">
+          <div class="control">
+            <a href="criteria_form.html">
+              <button class="button is-link">Pokračovat k definici hodnot</button>
+            </a>
+          </div>
+          <div class="control">
+            <button class="button is-link is-light">Ukončit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <footer class="has-text-centered is-flex-align-items-flex-end">
+    <div class="content is-align-content-baseline">
+      <p class="is-size-7 has-text-grey-lighter">Copyright &copy; 2024 Michaela Hošková. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

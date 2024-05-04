@@ -1,0 +1,14 @@
+{
+  "winstrom": {
+    "@version": "1.0",
+    "banka": [
+      {
+        "id": "2",                  // číslo pohybu v bance v ABŘE - bankovní výpis
+        "kod": "00000002/22",       // číslo výpisu v bance v bance - bankovní výpis
+        "primUcet": "code:221001",  // účtovací účet banky - bankovní výpis
+        "protiUcet": "code:531001", // účtovací účet - z fiktivního dokumentu
+        "zuctovano": "true"         // zda bylo zúčtováno
+      }
+    ]
+  }
+}

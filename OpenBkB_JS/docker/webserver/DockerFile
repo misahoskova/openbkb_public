@@ -1,0 +1,6 @@
+FROM node:21
+
+WORKDIR /webserver
+COPY ./volumes/webserver/package.json .
+RUN npm install
+CMD npm start

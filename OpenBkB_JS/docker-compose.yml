@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  postgresdb:
+    container_name: "postgresdb"
+    build: 
+      dockerfile: ./docker/postgresdb/DockerFile
+    restart: unless-stopped
+    env_file: ./.env
+    environment:
+      - POSTGRES_USER=$POSTGRESDB_USER
+      - POSTGRES_PASSWORD=$POSTGRESDB_ROOT_PASSWORD
+      - POSTGRES_DB=$POSTGRESDB_DATABASE
+    ports:
+      - $POSTGRESDB_LOCAL_PORT:$POSTGRESDB_DOCKER_PORT
+    volumes:
+      - ./volumes/postgresdb/db:/var/lib/postgres
+  pgadmin:
+    container_name: "pgadmin4"
+    depends_on:
+      - postgresdb
+    build: 
+      dockerfile: ./docker/pgadmin/DockerFile
+    restart: always
+    env_file: ./.env
+    user: root
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=$PGADMIN_DEFAULT_EMAIL
+      - PGADMIN_DEFAULT_PASSWORD=$PGADMIN_DEFAULT_PASSWORD
+    ports:
+      - "$PGADMIN_LOCAL_PORT:$PGADMIN_DOCKER_PORT"
+    volumes:
+      - ./volumes/pgadmin:/var/lib/pgadmin
+  webserver:
+    container_name: "webserver"
+    depends_on:
+      - postgresdb
+    build: 
+      dockerfile: ./docker/webserver/DockerFile
+    restart: unless-stopped
+    env_file: ./.env
+    ports:
+      - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
+    environment:
+      - DB_HOST=postgresdb
+      - DB_USER=$POSTGRESDB_USER
+      - DB_PASSWORD=$POSTGRESDB_ROOT_PASSWORD
+      - DB_NAME=$POSTGRESDB_DATABASE
+      - DB_PORT=$POSTGRESDB_DOCKER_PORT
+    # stdin_open: true
+    # tty: true
+    volumes:
+      - ./volumes/webserver/server.js:/webserver/server.js
+      - ./volumes/webserver/.env.sample:/webserver/.env.sample
+      - ./volumes/webserver/app:/webserver/app
+  
+
+# volumes: 
+#   db:

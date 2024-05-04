@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="//code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <title>OpenBkB - Accounting</title>
+</head>
+
+<body>
+  <nav class="navbar has-shadow">
+    <div class="navbar-brand">
+      <a href="index.html" class="navbar-item">
+        <img src="img/plechova-ucetni-rozsirene.png" alt="logo" style="max-height: 100px;" class="py2 px2">
+      </a>
+      <a class="navbar-burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </div>
+
+    <div class="navbar-menu" id="nav-links">
+      <div class="navbar-end">
+        <a href="index.html" class="navbar-item">Home</a>
+        <a href="pairing.html" class="navbar-item">Párování</a>
+        <a href="#" class="navbar-item">Historie účtování</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section has-text-centered">
+    <h1 class="title is-1">Přehled účtovacích botů</h1>
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+        <thead>
+          <tr>
+            <th class="is-expanded is-vcentered">ID bota</th>
+            <th class="is-expanded is-vcentered">Název</th>
+            <th class="is-expanded is-vcentered">Typ bota</th>
+            <th class="is-expanded is-vcentered">Určení společnosti</th>
+            <th class="is-expanded is-vcentered">Speficikace bankovního účtu</th>
+            <th class="is-expanded is-vcentered">Typ pohybu</th>
+            <th class="is-expanded is-vcentered">Typ dokumentu</th>
+            <th class="is-expanded is-vcentered">Začátek platnosti</th>
+            <th class="is-expanded is-vcentered">Konec platnosti</th>
+            <th class="is-expanded is-vcentered">Číslo účetního účtu</th>
+            <th class="is-expanded is-vcentered">Částka</th>
+            <th class="is-expanded is-vcentered">Měna</th>
+            <th class="is-expanded is-vcentered">Variabilní symbol</th>
+            <th class="is-expanded is-vcentered">IBAN</th>
+            <th class="is-expanded is-vcentered">Číslo účtu</th>
+            <th class="is-expanded is-vcentered">Kód banky</th>
+            <th class="is-expanded is-vcentered">Datum</th>
+            <th class="is-expanded is-vcentered">Společnost</th>
+            <th class="is-expanded is-vcentered">Popisek</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Alpha</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Bravo</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Charlie</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Delta</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="container">
+      <p class="field">
+        <a href="robot_form.html" class="button is-info is-pulled-left is-small">
+          <span class="icon is-small">
+            <i class="fas fa-plus"></i>
+          </span>
+          <span>Přidat bota</span>
+        </a>
+        <button class="button is-danger is-outlined is-pulled-right is-small" id="smazat-boty">
+          <span class="icon is-small">
+            <i class="fas fa-trash"></i>
+          </span>
+          <span>Smazat boty</span>
+        </button>
+      </p>
+    </div>
+    <div class="columns is-centered pt-6 mt-6">
+      <div class="column is-half">
+          <div class="buttons is-centered pt-6">
+              <a class="button is-primary is-large mr-4" type="submit">Aktivovat boty</a>
+          </div>
+      </div>
+  </div>
+  </section>
+
+  <footer class="has-text-centered is-flex-align-items-flex-end mt-6 pt-4">
+    <div class="content is-align-content-baseline">
+      <p class="is-size-7 has-text-grey-lighter">Copyright &copy; 2024 Michaela Hošková. All rights reserved.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>
