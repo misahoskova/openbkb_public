@@ -1,10 +1,8 @@
 # OpenBkB - public version
 
 ## Installing project
-
-```
 The only thing you need is to have Docker installed.
-```
+
 
 ## Start application
 Don't forget you need to have Docker running.
